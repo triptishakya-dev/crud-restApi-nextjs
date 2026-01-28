@@ -3,8 +3,8 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
  const postControllers = async (req, res) => {
+      console.log(req.body) 
   try {
-    console.log(req)
     const { name, email, password } = req.body;
 
     console.log(name);
