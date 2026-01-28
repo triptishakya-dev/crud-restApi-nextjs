@@ -34,3 +34,20 @@ const prisma = new PrismaClient();
 };
 
 export default postControllers
+
+
+
+
+
+export const getuser = async (req ,res) => {
+    try {
+        const user = await prisma.User.findMany()
+        console.log(user)
+        res.status(200).json({ message:"user feched sucessfully", user})
+        
+    } catch (error) {
+        console.error("error fecting" , error);
+        res.status(500).json({error: "internal server error"})
+        
+    }
+}
